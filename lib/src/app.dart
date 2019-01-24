@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+final items = List<String>.generate(10000, (i) => 'Item $i');
+
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -7,8 +9,13 @@ class App extends StatelessWidget {
       title: 'demo',
       home: Scaffold(
         appBar: AppBar(),
-        body: Center(
-          child: Text('demo'),
+        body: ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              title: Text(items[index]),
+            );
+          },
         ),
       ),
     );
