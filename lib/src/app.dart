@@ -7,8 +7,20 @@ class App extends StatelessWidget {
       title: 'demo',
       home: Scaffold(
         appBar: AppBar(),
-        body: Center(
-          child: Text('demo'),
+        body: Stack(
+          children: <Widget>[
+            Center(child: CircularProgressIndicator()),
+            Center(
+//              child: FadeInImage.memoryNetwork(
+//                placeholder: kTransparentImage,
+//                image: 'http://localhost/gif.gif',
+//              ),
+              child: FadeInImage.assetNetwork(
+                placeholder: 'assets/loading.gif',
+                image: 'http://localhost/gif.gif',
+              ),
+            )
+          ],
         ),
       ),
     );
