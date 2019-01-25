@@ -7,8 +7,23 @@ class App extends StatelessWidget {
       title: 'demo',
       home: Scaffold(
         appBar: AppBar(),
-        body: Center(
-          child: Text('demo'),
+        body: HomePage(),
+      ),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: InkWell(
+        onTap: () {
+          Scaffold.of(context).showSnackBar(SnackBar(content: Text('Tap')));
+        },
+        child: Container(
+          padding: EdgeInsets.all(12),
+          child: Text('Flat Button'),
         ),
       ),
     );
