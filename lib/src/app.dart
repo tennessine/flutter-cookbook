@@ -7,8 +7,28 @@ class App extends StatelessWidget {
       title: 'demo',
       home: Scaffold(
         appBar: AppBar(),
-        body: Center(
-          child: Text('demo'),
+        floatingActionButton: FloatingActionButton.extended(
+          elevation: 4.0,
+          onPressed: () {},
+          icon: Icon(Icons.add),
+          label: Text('Add a task'),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: BottomAppBar(
+          child: new Row(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              IconButton(
+                icon: Icon(Icons.menu),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(Icons.search),
+                onPressed: () {},
+              )
+            ],
+          ),
         ),
       ),
     );
